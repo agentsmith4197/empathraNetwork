@@ -28,7 +28,8 @@ export const getCampaigns = async (): Promise<Campaign[]> => {
     goalAmount: doc.goalAmount,
     raisedAmount: doc.raisedAmount,
     status: doc.status,
-    createdAt: doc.createdAt
+    createdAt: doc.createdAt,
+    image: doc.image
   }));
 };
 

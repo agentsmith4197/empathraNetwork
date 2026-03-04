@@ -11,7 +11,8 @@ const CreateCampaign = () => {
     goalAmount: 0,
     raisedAmount: 0,
     status: "active",
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
+    image: " "
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
