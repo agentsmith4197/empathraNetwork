@@ -2,59 +2,153 @@
   width: 100%;
   background: white;
   border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-container {
   max-width: 1200px;
   margin: auto;
   padding: 16px 20px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
+/* LOGO */
 
-  span {
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.logo img {
+  width: 38px;
+}
+
+.logo span {
+  color: #5b4bff;
+}
+
+/* NAV LINKS */
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+
+  a:hover {
     color: #5b4bff;
   }
 }
 
-.nav-links {
-  display: flex;
-  gap: 25px;
+/* START CAMPAIGN BUTTON */
 
-  a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-
-    &:hover {
-      color: #5b4bff;
-    }
-  }
+.start-btn {
+  background: #5b4bff;
+  color: white !important;
+  padding: 10px 18px;
+  border-radius: 8px;
 }
+
+/* AUTH BUTTONS */
 
 .auth-buttons {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 
   button {
     padding: 8px 16px;
     border-radius: 6px;
-    border: none;
     cursor: pointer;
+    font-weight: 500;
+  }
+}
+
+.login {
+  border: 1px solid #ddd;
+  background: white;
+}
+
+.signup {
+  background: #5b4bff;
+  border: none;
+  color: white;
+}
+
+/* MOBILE MENU */
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+
+    background: white;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+
+    display: none;
   }
 
-  .login {
-    background: transparent;
-    border: 1px solid #ddd;
+  .nav-links.open {
+    display: flex;
   }
 
-  .signup {
-    background: #5b4bff;
-    color: white;
+  .menu-toggle {
+    display: block;
+  }
+
+  .auth-buttons {
+    display: none;
+  }
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-image {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+
+  strong {
+    color: #5b4bff;
   }
 }
