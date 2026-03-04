@@ -1,0 +1,25 @@
+@import "../variables";
+
+.campaign-card {
+  background: white;
+  border-radius: $border-radius;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+
+  .progress-bar {
+    background: #eee;
+    height: 8px;
+    border-radius: 6px;
+    overflow: hidden;
+
+    .progress {
+      background: $secondary-color;
+      height: 100%;
+    }
+  }
+}
