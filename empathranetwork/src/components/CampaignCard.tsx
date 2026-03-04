@@ -17,7 +17,7 @@ const CampaignCard = ({ campaign }: Props) => {
       {/* Campaign Image */}
       <div className="campaign-image">
         <img
-          src={campaign.image || "/images/campaign-demo.jpg"}
+          src={campaign.image || "/images/campaign-demo.jpeg"}
           alt={campaign.title}
         />
       </div>

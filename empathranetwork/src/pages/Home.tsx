@@ -19,7 +19,7 @@ const demoCampaigns: Campaign[] = [
     raisedAmount: 1200,
     status: "active",
     createdAt: new Date().toISOString(),
-    image: "/images/campaign1.jpg"
+    image: "/images/campaign-demo.jpeg"
   },
   {
     $id: "demo2",
@@ -30,7 +30,7 @@ const demoCampaigns: Campaign[] = [
     raisedAmount: 6400,
     status: "active",
     createdAt: new Date().toISOString(),
-    image: "/images/campaign2.jpg"
+    image: "/images/campaign2.jpeg"
   },
   {
     $id: "demo3",
@@ -41,7 +41,7 @@ const demoCampaigns: Campaign[] = [
     raisedAmount: 3200,
     status: "active",
     createdAt: new Date().toISOString(),
-    image: "/images/campaign3.jpg"
+    image: "/images/campaign3.jpeg"
   },
   {
     $id: "demo4",
