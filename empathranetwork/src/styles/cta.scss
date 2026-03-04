@@ -1,0 +1,32 @@
+.cta {
+  text-align: center;
+  padding: 90px 20px;
+  background: #ffffff;
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 18px;
+    color: #555;
+  }
+}
+
+.cta-btn {
+  margin-top: 25px;
+  background: #5b4bff;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: #4838e8;
+  }
+}

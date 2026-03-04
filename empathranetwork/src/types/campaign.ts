@@ -6,4 +6,5 @@ export interface Campaign {
   raisedAmount: number
   status: string
   createdAt: string
+  image: string
 }

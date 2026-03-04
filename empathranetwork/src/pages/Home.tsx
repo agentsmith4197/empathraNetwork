@@ -1,72 +1,142 @@
 import { useEffect, useState } from "react";
-import type { Campaign } from "../types/campaign";
 import { getCampaigns } from "../services/campaignServices";
-import CampaignCard from "../components/CampaignCard";
 
-const demoCampaign: Campaign = {
-  $id: "demo-1",
-  title: "Help Build a Community School",
-  description:
-    "This campaign aims to raise funds to build a community school for underprivileged children. Your support will help provide classrooms, books, and basic learning facilities.",
-  goalAmount: 5000,
-  raisedAmount: 1200,
-  status: "active",
-  createdAt: new Date().toISOString(),
-};
+import Hero from "../components/Hero";
+import FeaturedCampaigns from "../components/FeaturedCampaigns";
+import TrendingCampaigns from "../components/TrendingCampaigns";
+import CallToAction from "../components/callToAction";
+import ImpactStats from "../components/ImpactStats";
+
+import type { Campaign } from "../types/campaign";
+
+const demoCampaigns: Campaign[] = [
+  {
+    $id: "demo1",
+    title: "Help Build a Community School",
+    description:
+      "Support education for children in underserved communities by helping us build a safe learning environment.",
+    goalAmount: 5000,
+    raisedAmount: 1200,
+    status: "active",
+    createdAt: new Date().toISOString(),
+    image: "/images/campaign1.jpg"
+  },
+  {
+    $id: "demo2",
+    title: "Emergency Surgery Fund",
+    description:
+      "A young mother urgently needs life-saving surgery. Your support can give her another chance at life.",
+    goalAmount: 10000,
+    raisedAmount: 6400,
+    status: "active",
+    createdAt: new Date().toISOString(),
+    image: "/images/campaign2.jpg"
+  },
+  {
+    $id: "demo3",
+    title: "Support Flood Victims",
+    description:
+      "Families affected by flooding need food, shelter and clean water. Help rebuild their lives.",
+    goalAmount: 8000,
+    raisedAmount: 3200,
+    status: "active",
+    createdAt: new Date().toISOString(),
+    image: "/images/campaign3.jpg"
+  },
+  {
+    $id: "demo4",
+    title: "Laptop Fund for Students",
+    description:
+      "Help students from low-income families get laptops for online learning and education.",
+    goalAmount: 6000,
+    raisedAmount: 2100,
+    status: "active",
+    createdAt: new Date().toISOString(),
+    image: "/images/campaign4.jpg"
+  },
+  {
+    $id: "demo5",
+    title: "Clean Water for Rural Village",
+    description:
+      "We are raising funds to install a clean water system for a rural community lacking safe drinking water.",
+    goalAmount: 9000,
+    raisedAmount: 4500,
+    status: "active",
+    createdAt: new Date().toISOString(),
+    image: "/images/campaign5.jpg"
+  }
+];
 
 const Home = () => {
 
-  const [campaigns, setCampaigns] = useState<Campaign[]>([]);
+  const [campaigns,setCampaigns] = useState<Campaign[]>([]);
+  const [loading,setLoading] = useState(true);
 
-  useEffect(() => {
+  useEffect(()=>{
 
-    const fetchCampaigns = async () => {
+    const fetchCampaigns = async ()=>{
 
       try {
 
         const res = await getCampaigns();
 
-        const campaigns: Campaign[] = res.map((doc: any) => ({
+        const mapped: Campaign[] = res.map((doc:any)=>({
           $id: doc.$id,
           title: doc.title,
           description: doc.description,
           goalAmount: doc.goalAmount,
           raisedAmount: doc.raisedAmount,
           status: doc.status,
-          createdAt: doc.createdAt
+          createdAt: doc.createdAt,
+          image: doc.image
         }));
 
-        if (campaigns.length === 0) {
-          setCampaigns([demoCampaign]);
-        } else {
-          setCampaigns(campaigns);
-        }
+        setCampaigns(mapped.length ? mapped : demoCampaigns);
 
-      } catch (error) {
-        console.error("Failed to fetch campaigns", error);
-        setCampaigns([demoCampaign]);
+      } catch {
+
+        setCampaigns(demoCampaigns);
+
+      } finally {
+        setLoading(false);
       }
 
-    };
+    }
 
     fetchCampaigns();
 
-  }, []);
+  },[])
+
+  if(loading){
+    return (
+      <div style={{padding:"120px",textAlign:"center"}}>
+        Loading campaigns...
+      </div>
+    )
+  }
 
   return (
 
-    <div className="grid grid-cols-3 gap-6 p-10">
+    <>
 
-      {campaigns.map((campaign) => (
-        <CampaignCard
-          key={campaign.$id}
-          campaign={campaign}
-        />
-      ))}
+      <Hero />
 
-    </div>
+      <ImpactStats />
+
+      <FeaturedCampaigns
+        campaigns={campaigns.slice(0,3)}
+      />
+
+      <TrendingCampaigns
+        campaigns={campaigns.slice(0,6)}
+      />
+
+      <CallToAction />
+
+    </>
 
   );
+
 };
 
 export default Home;

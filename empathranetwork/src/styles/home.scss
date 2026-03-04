@@ -1,0 +1,176 @@
+.home {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(135deg, #5b4bff, #7c6cff);
+  color: white;
+  padding: 110px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 760px;
+  margin: auto;
+
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 19px;
+    margin-bottom: 35px;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+}
+
+.hero-btn {
+  background: white;
+  color: #5b4bff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  }
+}
+
+
+/* FEATURED CAMPAIGNS */
+
+.campaign-section {
+  padding: 90px 20px;
+  background: #ffffff;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 34px;
+    font-weight: 600;
+  }
+}
+
+.campaign-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 35px;
+}
+
+
+/* TRENDING CAMPAIGNS */
+
+.trending {
+  background: #f7f8ff;
+  padding: 90px 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 34px;
+  }
+}
+
+.trending-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 35px;
+}
+
+
+/* CALL TO ACTION */
+
+.cta {
+  text-align: center;
+  padding: 110px 20px;
+  background: linear-gradient(135deg,#5b4bff,#7c6cff);
+  color: white;
+
+  h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 18px;
+    opacity: 0.9;
+  }
+}
+
+.cta-btn {
+  margin-top: 30px;
+  background: white;
+  color: #5b4bff;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+  }
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .campaign-grid,
+  .trending-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .campaign-grid,
+  .trending-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .cta h2 {
+    font-size: 28px;
+  }
+
+}
