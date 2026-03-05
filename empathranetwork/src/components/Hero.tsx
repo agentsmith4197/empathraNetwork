@@ -57,9 +57,9 @@ const Hero = () => {
 
           <div className="hero-buttons">
 
-            <Link to="/create-campaign">
+            <Link to="/donate">
               <button className="primary-btn">
-                Start a Campaign
+                Make A Donation
               </button>
             </Link>
 

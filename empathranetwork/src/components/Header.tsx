@@ -24,14 +24,14 @@ const Header = () => {
 
         <nav className="nav-links">
           <Link to="/">Home</Link>
-          <Link to="/create-campaign">Start Campaign</Link>
+          <Link to="/campaigns">Campaign</Link>
         </nav>
 
         {/* AUTH BUTTONS */}
 
         <div className="auth-buttons">
-          <button className="login">Login</button>
-          <button className="signup">Sign Up</button>
+          <Link to="/login"><button className="login">Login</button></Link>
+          <Link to="/signup"><button className="signup">Sign Up</button></Link>
         </div>
 
       </div>

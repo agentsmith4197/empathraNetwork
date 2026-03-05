@@ -84,3 +84,50 @@
   }
 
 }
+
+.trending {
+  background: #f7f8ff;
+  padding: 90px 20px;
+}
+
+.trending-header {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-size: 34px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #666;
+    font-size: 16px;
+    max-width: 520px;
+  }
+}
+
+.view-btn {
+  background: #5b4bff;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+
+  &:hover {
+    background: #4636e5;
+  }
+}
+
+.empty-state {
+  grid-column: span 3;
+  text-align: center;
+  color: #888;
+}
