@@ -6,6 +6,7 @@ import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import ExploreCampaigns from "./pages/ExploreCampaigns"
 import CampaignDetails from "./pages/CampaignDetails"
+
 import "./App.css";
 
 function App() {

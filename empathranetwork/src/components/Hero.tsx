@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../styles/hero.scss";
+import DonationModal from "../components/DonationModal";
 
 const slides = [
   {
@@ -23,6 +24,7 @@ const slides = [
 const Hero = () => {
 
   const [current,setCurrent] = useState(0);
+  const [openDonate,setOpenDonate] = useState(false);
 
   useEffect(()=>{
 
@@ -57,13 +59,13 @@ const Hero = () => {
 
           <div className="hero-buttons">
 
-            <Link to="/donate">
-              <button className="primary-btn">
+              <button className="primary-btn"
+                onClick={()=>setOpenDonate(true)}>
                 Make A Donation
               </button>
-            </Link>
 
-            <Link to="/">
+
+            <Link to="/campaigns">
               <button className="secondary-btn">
                 Explore Campaigns
               </button>
@@ -74,7 +76,10 @@ const Hero = () => {
         </div>
 
       </div>
-
+      <DonationModal
+      isOpen={openDonate}
+      onClose={()=>setOpenDonate(false)}
+    />
     </section>
   );
 };

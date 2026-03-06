@@ -1,0 +1,167 @@
+.donation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.donation-modal {
+  position: relative;
+  background: white;
+  padding: 35px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+/* CLOSE BUTTON */
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* TEXT */
+
+.donation-modal h2 {
+  margin-bottom: 8px;
+}
+
+.donation-modal p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* QUICK AMOUNTS */
+
+.quick-amounts {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.quick-amounts button {
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quick-amounts button:hover {
+  background: #5b4bff;
+  color: white;
+}
+
+/* AMOUNT INPUT */
+
+.amount-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.amount-input span {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.amount-input input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+/* BUTTONS */
+
+.donation-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.cancel {
+  flex: 1;
+  background: #eee;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.donate {
+  flex: 1;
+  background: #5b4bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.donate:hover {
+  background: #4636e5;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+  .donation-modal {
+    margin: 20px;
+  }
+
+  .quick-amounts {
+    flex-wrap: wrap;
+  }
+
+}
+
+.payment-methods {
+  margin-bottom: 20px;
+}
+
+.payment-methods p {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.methods {
+  display: flex;
+  gap: 10px;
+}
+
+.methods button {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.methods button.active {
+  background: #5b4bff;
+  color: white;
+  border: none;
+}
+
+.success {
+  text-align: center;
+}

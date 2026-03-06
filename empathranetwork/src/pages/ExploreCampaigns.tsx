@@ -201,40 +201,103 @@ const ExploreCampaigns = () => {
 
   });
 
-  return (
+return (
 
-    <div className="explore-page">
+  <div className="explore-page">
+
+    {/* PAGE HEADER */}
+
+    <div className="explore-header">
 
       <h1>Explore Campaigns</h1>
 
-      <div className="filters">
+      <p>
+        Discover campaigns making a real impact around the world.
+      </p>
 
-        <button onClick={()=>setFilter("all")}>All</button>
+    </div>
 
-        <button onClick={()=>setFilter("active")}>Active</button>
 
-        <button onClick={()=>setFilter("completed")}>Completed</button>
+    {/* SEARCH */}
 
-        <button onClick={()=>setFilter("war")}>War Relief</button>
+    <div className="explore-search">
 
-      </div>
+      <input
+        type="text"
+        placeholder="Search campaigns..."
+      />
 
-      <div className="campaign-grid">
+    </div>
 
-        {filtered.map(campaign => (
 
+    {/* FILTER BUTTONS */}
+
+    <div className="filters">
+
+      <button
+        className={filter === "all" ? "active" : ""}
+        onClick={()=>setFilter("all")}
+      >
+        All
+      </button>
+
+      <button
+        className={filter === "active" ? "active" : ""}
+        onClick={()=>setFilter("active")}
+      >
+        Active
+      </button>
+
+      <button
+        className={filter === "completed" ? "active" : ""}
+        onClick={()=>setFilter("completed")}
+      >
+        Completed
+      </button>
+
+      <button
+        className={filter === "war" ? "active" : ""}
+        onClick={()=>setFilter("war")}
+      >
+        War Relief
+      </button>
+
+    </div>
+
+
+    {/* CAMPAIGN COUNT */}
+
+    <p className="campaign-count">
+      {filtered.length} campaigns found
+    </p>
+
+
+    {/* CAMPAIGN GRID */}
+
+    <div className="campaign-grid">
+
+      {filtered.length === 0 ? (
+
+        <div className="empty-state">
+          No campaigns found.
+        </div>
+
+      ) : (
+
+        filtered.map((campaign)=>(
           <CampaignCard
             key={campaign.$id}
             campaign={campaign}
           />
+        ))
 
-        ))}
-
-      </div>
+      )}
 
     </div>
 
-  );
+  </div>
+
+);
 
 };
 

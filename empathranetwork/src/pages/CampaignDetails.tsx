@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../styles/campaignDetails.scss";
+import DonationModal from "../components/DonationModal";
 
 interface Campaign {
   title: string;
@@ -15,6 +16,7 @@ const CampaignDetails = () => {
   const { id } = useParams<{ id: string }>();
 
   const [campaign,setCampaign] = useState<Campaign | null>(null);
+  const [openDonate,setOpenDonate] = useState(false);
 
   useEffect(()=>{
 
@@ -87,9 +89,12 @@ const CampaignDetails = () => {
 
           </p>
 
-          <button className="donate-btn">
-            Donate Now
-          </button>
+          <button
+        className="donate-btn"
+        onClick={()=>setOpenDonate(true)}
+        >
+        Donate Now
+        </button>
 
           <div className="share">
 
@@ -108,6 +113,11 @@ const CampaignDetails = () => {
           </div>
 
         </div>
+
+        <DonationModal
+        isOpen={openDonate}
+        onClose={()=>setOpenDonate(false)}
+        />
 
       </div>
 
